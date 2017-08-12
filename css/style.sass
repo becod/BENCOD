@@ -1,0 +1,81 @@
+*:before,*,*:after
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+html, body
+    height: 100%
+
+$fullH: 100vh    
+
+.section-main
+    background-color: #fff
+    padding-top: 5%
+    padding-bottom: 5%
+    
+.section-container-vid
+    height: $fullH
+    position: relative
+    z-index: -1
+    top: 0
+    left: 0
+.container-vid
+    top: -50px
+    height: $fullH
+    position: fixed
+    width: 100%
+    &>video
+        width: 100%
+.container-vid-shade
+    opacity: 0
+    background: rgba(0,0,0,.8)
+    z-index: 3
+    height: $fullH
+    position: fixed
+    width: 100%
+    
+.content
+    
+svg
+    vertical-align: middle
+    position: relative
+    top: -2px
+svg.intro
+    background: linear-gradient(135deg, #aa3bb1, #582a7e)
+    max-width: 1200px
+    position: relative
+    left: 50%
+    transform: translate(-50%, 0)
+    box-shadow: 0 30px 50px -20px rgb(46, 6, 66) 
+    .text
+        display: none
+    &.go
+        .text
+            font-family: Arial, sans-serif
+            font-size: 20px
+            text-transform: uppercase
+            display: block
+        .text-storke
+            fill: none
+            stroke: #51256f
+            stroke-width: 2.8px
+            stroke-dashoffset: -900
+            stroke-dasharray: 900
+            stroke-linecap: butt
+            stroke-linejoin: round
+            animation: dash 2.5s ease-in-out forwards
+        .text-stroke:nth-child(2)
+            animation-delay: .3s
+        .text-stroke:nth-child(3)
+            animation-delay: .9s
+        .text-stroke-2
+            stroke: #f6bdfa
+            animation-delay: 1.2s
+        .text-stroke:nth-child(5)
+            animation-delay: 1.5s
+        .text-stroke:nth-child(6)
+            animation-delay: 1.8s
+        
+@keyframes dash
+    100%
+        stroke-dashoffset: 0
+        
