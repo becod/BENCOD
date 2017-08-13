@@ -1,5 +1,9 @@
 $(document).ready( function(){
-    $('.loading').remove().delay(400);
+    $('#header').removeClass('hiden').delay(2000)
+    $('#section').removeClass('hiden').delay(2000).queue(function() {
+        $('.loading').remove()
+    });
+    
 });
 $(function() {
   $('.intro').addClass('go');
