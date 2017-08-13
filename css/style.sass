@@ -13,6 +13,7 @@ h1,h2,h3
     clear: both
 .hiden
     display: none
+    overflow: hidden
     
 $fullH: 100vh    
 
@@ -129,11 +130,11 @@ header
     max-width: 1200px
     margin: auto
     
-svg
+//svg
     vertical-align: middle
     position: relative
     top: -2px
-svg.intro
+//svg.intro
     position: fixed
     .text
         display: none
@@ -164,7 +165,7 @@ svg.intro
         .text-stroke:nth-child(6)
             animation-delay: 1.8s
         
-@keyframes dash
+//@keyframes dash
     100%
         stroke-dashoffset: 0
     
@@ -210,4 +211,40 @@ svg.intro
         filter: blur(0px)
     100%
         filter: blur(4px)
+    
+    
+    
+
+svg.intro 
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    .text 
+        display: none
+ 
+    &.go
         
+        .text
+            font-family: Arial, sans-serif
+            font-size: $sizeLetter
+            text-transform: uppercase
+            display: block
+        .text-stroke 
+            fill: none
+            stroke: #000
+            stroke-width: 2.8px
+            stroke-dashoffset: -900
+            stroke-dasharray: 900
+            stroke-linecap: butt
+            stroke-linejoin: round
+            animation: dash 4s ease-in-out forwards
+        .text-stroke:nth-child(2) 
+            animation-delay: .8s
+        .text-stroke-2 
+            stroke: #f6bdfa
+            animation-delay: 2s
+
+@keyframes dash 
+    100% 
+        stroke-dashoffset: 0
