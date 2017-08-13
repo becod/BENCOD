@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    $('.loading').remove();
+$(document).ready( function(){
+    $('.loading').remove().delay(200);
 });
 $(function() {
   $('.intro').addClass('go');
