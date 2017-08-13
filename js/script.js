@@ -1,13 +1,16 @@
+$(document).ready(function(){
+    $('.loading').remove();
+});
 $(function() {
   $('.intro').addClass('go');
 
-  $('.reload').click(function() {
-    $('.intro').removeClass('go').delay(200).queue(function(next) {
-      $('.intro').addClass('go');
-      next();
-    });
+  //$('.reload').click(function() {
+  //  $('.intro').removeClass('go').delay(200).queue(function(next) {
+    //$('.intro').addClass('go');
+   //   next();
+   // });
 
-  });
+  //});
 });
 (function () {
     $(window).scroll(function () { 
