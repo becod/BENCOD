@@ -3,19 +3,31 @@ $(document).ready( function(){
     $('#section').removeClass('hiden').delay(2000).queue(function() {
         $('.loading').remove()
     });
-    
+    $(window).scroll(function(){
+		$('.hideme').each(function(i){
+			var bottom_of_object=$(this).offset().top+$(this).outerHeight();
+			var bottom_of_window=$(window).scrollTop()+$(window).height();
+			if(bottom_of_window>bottom_of_object){
+				$(this).animate({'opacity':'1'},800);
+			}
+		});
+	});
 });
 $(function() {
   $('.intro').addClass('go');
-
-  //$('.reload').click(function() {
-  //  $('.intro').removeClass('go').delay(200).queue(function(next) {
-    //$('.intro').addClass('go');
-   //   next();
-   // });
-
-  //});
 });
+$(function(){
+	$('a[href=#]:not(a[href=#])').on('click',function(){
+		if(location.pathname.replace(/^\//,'')==this.pathname.replace(/^\//,'')&&location.hostname==this.hostname){
+			var target=$(this.hash);target=target.length?target:$('[name='+this.hash.slice(1)+']');
+			if(target.length){
+				$('html,body').animate({scrollTop:target.offset().top},900);
+				return false;
+			}
+		}
+	});
+});
+
 (function () {
     $(window).scroll(function () { 
         var Num = $(window).scrollTop() / 500;
