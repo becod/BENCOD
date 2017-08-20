@@ -171,7 +171,7 @@ header
     background-color: #fff
     padding-top: 5%
     padding-bottom: 5%
-.section-one
+.section-one,.section-two,.section-three
     max-width: 1200px
     margin: auto
 //Letters     
@@ -207,7 +207,7 @@ svg.intro
     100% 
         stroke-dashoffset: 0
 //Titles
-#about h2, #skills h2, #portfolio h2, .container > h2
+#about h2, #skills h2, #portfolio h2, .container > h2,.section-three h2
     padding: 20% 0 3% 0
     display: block
     color: #5B5A60 
@@ -287,8 +287,479 @@ svg.intro
     width: 70%
     background: #2D2D2D
     display: block    
+//Botton 
+.section-download>button,.section-download>a
+    padding: 20px 40px
+    background: none
+    border: none
+    position: relative
+    text-transform: uppercase
+    font-weight: bold
+    letter-spacing: 3px
+    cursor: pointer
+    text-decoration: none
+    &:after, &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        border: 2px solid #000
+        transition: transform .2s 
+    &:after
+        transform: translate(3px, 3px)	
+    &:before
+        transform: translate(-3px, -3px)
+    &:hover
+        &:after, &:before
+            transform: translate(0)    
+//Projects
+#icons 
+    display: none
+
+.header-wrapper 
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    padding: 2rem 4rem
+    z-index: 20
+
+.header-wrapper .header 
+    position: relative
+    display: block
+    width: 100%
+    height: 6rem
+
+.header-wrapper .menu-hamburger 
+    position: relative
+    width: 1.3rem
+    display: inline-block
+    vertical-align: middle
+    background: black
+    height: 0.2rem
+    cursor: pointer
+
+.header-wrapper .menu-hamburger::before 
+    content: ""
+    width: 1.3rem
+    height: 0.2rem
+    background: black
+    position: absolute
+    top: -0.4rem
+
+.header-wrapper .menu-hamburger::after 
+    content: ""
+    width: 1.3rem
+    height: 0.2rem
+    background: black
+    position: absolute
+    top: 0.4rem
+
+.header-wrapper .menu-txt 
+    position: relative
+    display: inline-block
+    vertical-align: middle
+    margin-left: 0.5rem
+    text-transform: uppercase
+    cursor: pointer
+
+.header-wrapper .logo-wrapper 
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translate(-50%, -50%)
+
+.header-wrapper .logo 
+    display: block
+    font-size: 2rem
+    font-weight: bold
+    margin-top: 3rem
+    line-height: 1
+    font-weight: 600
+
+.header-wrapper .logo span 
+    display: block
 
 
+.number-wrapper 
+    position: absolute
+    height: 100%
+    width: 12rem
+    z-index: 10
+
+.number-wrapper .number-count 
+    position: relative
+    display: inline-block
+    top: 50%
+    transform: translateY(-50%)
+
+.number-wrapper .number 
+    position: relative
+    font-family: 'Montserrat', sans-serif
+    font-size: 12rem
+    color: #efefef
+    margin-left: -5rem
+    font-weight: 700
+
+
+.nav-wrapper 
+    position: absolute
+    height: 100%
+    width: 12rem
+    padding: 0 4rem
+    top: 0
+    right: 0
+    text-align: center
+    z-index: 10
+
+.nav-wrapper .nav-arrows 
+    position: relative
+    display: inline-block
+    top: 50%
+    transform: translateY(-50%)
+
+.nav-wrapper .nav-up 
+    opacity: 0
+
+.nav-wrapper .nav-up, .nav-wrapper .nav-down 
+    width: 2rem
+    height: 3rem
+    cursor: pointer
+
+.nav-wrapper .nav-up svg, .nav-wrapper .nav-down svg 
+    fill: #666666
+    width: 100%
+    max-height: 100%
+
+.nav-wrapper .nav-up svg:hover, .nav-wrapper .nav-down svg:hover 
+    fill: black
+
+.nav-wrapper .nav-up 
+    transform: rotate(180deg)
+
+.nav-wrapper .nav-line 
+    width: 100%
+    height: 0.1rem
+    background: black
+    margin: 1rem 0
+    background: #666666
+
+
+.slider-content 
+    position: relative
+    max-height: 850px
+    max-width: 112rem
+    min-width: 480px
+    background: #fff
+    margin: 0 auto
+    overflow: hidden
+    box-shadow: 0 0 35px 20px rgba(79, 69, 66, 0.2)
+
+.slider-content .slide 
+    position: absolute
+    width: 100%
+    height: 850px
+
+.slider-content .slide:after 
+    content: ""
+    display: table
+    clear: both
+
+.slider-content .slide:first-child .txt-wrapper span.copy 
+    opacity: 1
+
+.slider-content .slide:nth-child(odd) .img 
+    margin-left: 50%
+    transform: translateY(-100%)
+
+.slider-content .slide:nth-child(odd) .txt 
+    transform: translateY(100%)
+
+.slider-content .slide:nth-child(even) .img 
+    transform: translateY(100%)
+
+.slider-content .slide:nth-child(even) .txt 
+    margin-left: 45%
+    transform: translateY(-100%)
+
+.slider-content .slide.active 
+    position: absolute
+    z-index: 6
+
+.slider-content .slide.active .img, .slider-content .slide.active .txt 
+    transform: translateY(0)
+
+
+.slider-container 
+    position: relative
+    height: 65rem
+    overflow: hidden
+
+.slider-container:after 
+    content: ""
+    display: table
+    clear: both
+
+.slider-container .slide-content 
+    position: absolute
+    display: block
+    width: 50%
+    transition: transform 0.3s ease
+    transition-delay: 0.15s
+
+.slider-container .slide-content.txt 
+    display: table
+    padding: 15rem 10rem
+    background: white
+
+.slider-container .slide-content .txt-wrapper 
+    position: relative
+    display: table-cell
+    vertical-align: middle
+
+.slider-container .slide-content .txt-wrapper span.copy 
+    position: relative
+    text-transform: uppercase
+    width: 2rem
+    display: block
+    font-size: 1rem
+    line-height: 1
+    margin-bottom: 4rem
+    font-weight: 500
+    opacity: 0
+
+.slider-container .slide-content .txt-wrapper h2 
+    margin: 0
+    font-size: 4.3rem
+    margin-bottom: 4rem
+    line-height: 1
+    font-weight: 600
+
+.slider-container .slide-content .txt-wrapper h2 span 
+    display: block
+
+.slider-container .slide-content .txt-wrapper h3 
+    margin: 0
+    font-size: 2rem
+    margin-bottom: 2rem
+    line-height: 1
+    font-weight: 400
+
+.slider-container .slide-content .txt-wrapper h3 span 
+    color: #ccc
+
+.slider-container .slide-content .txt-wrapper a 
+    text-decoration: none
+    color: #AEACAB
+
+.slider-container .slide-conent .txt-wrapper button 
+    position: relative
+    padding: 1rem 3.5rem
+    color: white
+    text-align: center
+    display: block
+    border-radius: 3rem
+    background: #d02e2e
+    text-transform: uppercase
+    border: none
+    font-size: 1rem
+    margin-top: 3rem
+    font-weight: bold
+    outline: none
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3)
+
+.slider-container .slide-content .txt-wrapper .phone 
+    display: block
+    color: black
+    font-size: 1.9rem
+
+.slider-container .slide-content .txt-wrapper .subtitle 
+    display: block
+    text-transform: uppercase
+    color: #AEACAB
+    font-weight: bold
+    letter-spacing: 0.3rem
+    font-size: 1.2rem
+    margin-bottom: 2rem
+
+.slider-container .slide-content .txt-wrapper p.excerpt 
+    margin: 0
+    color: #AEACAB
+    font-size: 1.2rem
+    line-height: 1.5
+    margin-top: 5rem
+    margin-bottom: 3rem
+
+.slider-container .slide-content .txt-wrapper span.view-all 
+    color: #AEACAB
+
+.slider-container .slide-content .txt-wrapper ul 
+    margin: 0
+    padding: 0
+    list-style: none
+    margin-bottom: 1.5rem
+
+.slider-container .slide-content .txt-wrapper ul li 
+    position: relative
+    margin: 1.5rem 0
+    padding: 0
+
+.slider-container .slide-content .txt-wrapper ul li:after 
+    content: ""
+    display: table
+    clear: both
+
+.slider-container .slide-content .txt-wrapper .date-wrapper 
+    width: 20%
+    float: left
+    color: #AEACAB
+    text-align: left
+
+.slider-container .slide-content .txt-wrapper .date-wrapper .date 
+    font-size: 1.7rem
+
+.slider-container .slide-content .txt-wrapper .date-wrapper .month 
+    font-size: 1rem
+
+.slider-container .slide-content .txt-wrapper .post-wrapper 
+    width: 80%
+    float: left
+
+.slider-container .slide-content .txt-wrapper .post-wrapper .post-title 
+    display: block
+    font-size: 1.4rem
+    line-height: 1.3
+
+.slider-container .slide-content .txt-wrapper .post-wrapper .post-title a 
+    display: block
+    color: black
+    cursor: pointer
+
+.slider-container .slide-content .txt-wrapper .post-wrapper .post-title a:hover 
+    text-decoration: underline
+
+.slider-container .slide-content .txt-wrapper .post-wrapper .post-info 
+    display: block
+    color: #AEACAB
+    font-size: 1rem
+
+.slider-container .slide-content .txt-wrapper .post-wrapper .post-info:after 
+    content: ""
+    display: table
+    clear: both
+
+.slider-container .slide-content .txt-wrapper .post-wrapper .post-info ul 
+    margin: 0
+
+.slider-container .slide-content .txt-wrapper .post-wrapper .post-info li 
+    float: left
+    margin: 0 0.5rem
+
+.slider-container .slide-content .txt-wrapper .post-wrapper .post-info li:first-child 
+    margin-left: 0
+
+.slider-container .slide-content img 
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+
+.footer 
+    position: absolute
+    display: block
+    width: 100%
+    height: 6rem
+    bottom: 0
+    left: 0
+    padding: 2rem 4rem
+    z-index: 10
+
+.footer:after 
+    content: ""
+    display: table
+    clear: both
+
+
+.social-wrapper, .language-wrapper 
+    position: relative
+
+.social-wrapper ul, .language-wrapper ul 
+    position: relative
+    list-style: none
+    margin: 0
+    padding: 0
+
+.social-wrapper li, .language-wrapper li 
+    position: relative
+    display: inline-block
+    vertical-align: middle
+    margin: 0 0.5rem
+
+.social-wrapper a, .language-wrapper a 
+    text-decoration: none
+    color: black
+
+
+.social-wrapper 
+    float: left
+
+
+.language-wrapper 
+    float: right
+
+//Clients
+
+//Contact
+.section-three-form
+    max-width: 500px
+    float: left
+.section-three-box-two
+    float: right
+.section-three-from>form> input, input, textarea
+    padding: 5px
+    margin-bottom: 10px!important
+    color: #fff
+    width: 450px
+    border: solid 1px black
+
+.section-three-form>form
+    text-align: center
+//Download
+.footer-download
+    text-align: center
+    background: #f1f1f1
+    padding-top: 2%
+    padding-bottom: 2%
+.section-download>a
+    color: black
+//Rights
+.footer-rights
+    padding-top: 2%
+    padding-bottom: 2%
+    text-align: center
+    background: black
+    color: white
+.footer-above
+    height: 30px
+.footer-to-top
+    display: block
+    padding-bottom: 3%
+.scroll-up 
+    display: inline-block
+    width: 10px
+    height: 10px
+    margin: auto
+    transform: rotate(45deg)
+    display: block
+    border-top: 2px solid whitesmoke
+    border-left: 2px solid whitesmoke
+    cursor: pointer
+    transition: all .5s
+
+
+//Display Size
 @media (min-width: 64em) 
     header 
         background-position-y: -8vw
@@ -298,7 +769,7 @@ svg.intro
         max-width: 70%
     div#about 
         width: 100%
-    #about h2, #skills h2, #portfolio h2, .container > h2
+    #about h2, #skills h2, #portfolio h2, .container > h2,.section-three>h2
         padding-top: 15%
         padding-bottom: 3%
         font-size: 2.2em
@@ -308,7 +779,7 @@ svg.intro
 @media screen and (min-width: 768px) 
     .hideme
         opacity: 1
-    #about h2, #skills h2, #portfolio h2, .container > h2
+    #about h2, #skills h2, #portfolio h2, .container > h2,.section-three>h2
         font-size: 2.0em
     .skill-right p 
         font-size: 1.2em
@@ -316,7 +787,7 @@ svg.intro
 @media screen and (min-width: 1000px)
     .hideme
         opacity: 1
-    #about h2, #skills h2, #portfolio h2, .container > h2
+    #about h2, #skills h2, #portfolio h2, .container > h2,.section-three>h2
         padding-top: 8%
         padding-bottom: 2%
         font-size: 1.8em
@@ -350,5 +821,5 @@ svg.intro
 @media screen and (min-width: 1500px) 
     .hideme
         opacity: 1
-    #footer, #bot 
+    #footer, .footer-rights
         padding-bottom: 2%

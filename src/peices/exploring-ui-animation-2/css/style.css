@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 .hide {
   display: none;
-}
+} 
 
 *, *::after, *::before {
   box-sizing: border-box;
