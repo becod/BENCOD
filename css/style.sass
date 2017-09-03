@@ -20,7 +20,7 @@ section
     display: none
     overflow: hidden
 .hideme
-    opacity: 1
+    opacity: 0
     
 $fullH: 100vh    
 
@@ -177,7 +177,7 @@ header
     padding-bottom: 10%
 //Letters     
 svg.intro 
-    position: absolute
+    position: fixed
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
@@ -219,7 +219,7 @@ svg.intro
 #about 
     max-width: 100%
     background: #fff
-    color: #5B5A60
+    color: black
     padding-bottom: 10%
 
 .skill-right p 
@@ -239,16 +239,20 @@ svg.intro
     background: #fff
     padding: 0 8%
     text-align: center
+    display: flex
+    flex-wrap: wrap-reverse
 .skills ul 
     padding-top: 10%
 .box 
     height: 1.5em
     margin: 2% 0
     width: 100%
+    color: #2D2D2D
     border: .05em solid #2D2D2D
     border-radius: 2px
     display: inline-block
     div:first-child
+        color: #f1f1f1
         float: left
         padding-left: 10px
     div:nth-child(2)
@@ -257,7 +261,7 @@ svg.intro
     div:first-child, div:nth-child(2)
         position: relative    
         top: 50%
-        transform: translateY(-40%)
+        transform: translateY(-50%)
 .one 
     height: 1.4em
     width: 75%
@@ -279,6 +283,7 @@ svg.intro
     background: #2D2D2D
     display: block
 .skill-right
+    padding-bottom: 30px
     &>div
         font-size: 2em
         margin-top: 15px
@@ -288,6 +293,20 @@ svg.intro
             color: black
             &:last-child
                 margin-right: 0px
+.skill-column
+    margin-top: 10%
+    text-align: center
+    display: flex
+.skill-columns
+    width: 33.33%
+    padding: 0 5%
+    &>div
+        font-size: 3em
+        padding-bottom: 10%
+    &>p
+        font-size: 1em
+        line-height: 1.5em
+        color: rgba(26,26,26,0.6)
 //Botton 
 .section-download>button,.section-download>a
     padding: 20px 40px
@@ -532,24 +551,24 @@ svg.intro
     font-weight: 500
     opacity: 0
 
-.slider-container .slide-content .txt-wrapper h2 
+.slider-container .slide-content .txt-wrapper h3 
     margin: 0
     font-size: 4.3rem
     margin-bottom: 4rem
     line-height: 1
     font-weight: 600
 
-.slider-container .slide-content .txt-wrapper h2 span 
+.slider-container .slide-content .txt-wrapper h3 span 
     display: block
 
-.slider-container .slide-content .txt-wrapper h3 
+.slider-container .slide-content .txt-wrapper h4 
     margin: 0
     font-size: 2rem
     margin-bottom: 2rem
     line-height: 1
     font-weight: 400
 
-.slider-container .slide-content .txt-wrapper h3 span 
+.slider-container .slide-content .txt-wrapper h4 span 
     color: #ccc
 
 .slider-container .slide-content .txt-wrapper a 
@@ -719,11 +738,13 @@ svg.intro
     &>img
         width: 250px
         margin-right: 25px
+        margin-top: 30px
     &>img:last-child
         margin-right: 0px
         
 //Contact
 .section-three
+    padding: 0 5%
     &>div:last-child
         padding-bottom: 5%
 .section-three-form
@@ -733,6 +754,9 @@ svg.intro
     margin-top: 20%
 .section-three-box-two
     float: right
+.section-three-info
+    &>h3
+        margin-bottom: 15px!important
 .section-three-from>form> input, input, textarea
     padding: 5px
     margin-bottom: 10px!important
@@ -745,14 +769,14 @@ svg.intro
 //Download
 .footer-download
     text-align: center
-    background: #f1f1f1
+    background: #ECF0F1
     padding-top: 4%
     padding-bottom: 3%
 .section-download>a
     color: black
 //Soccials
 .footer-social
-    background: #f1f1f1
+    background: #ECF0F1
     padding-top: 2%
     padding-bottom: 2%
 .social-container
@@ -767,12 +791,12 @@ svg.intro
             margin-right: 0px
 //Rights
 .footer-container-rights
-    background-color: #f1f1f1
+    background-color: #ECF0F1
 .footer-rights
     padding-top: 2%
     padding-bottom: 2%
     text-align: center
-    background: #f1f1f1
+    background: #ECF0F1
     color: black
 .footer-above
     padding-top: 3%
@@ -789,6 +813,26 @@ svg.intro
     cursor: pointer
     transition: all .5s
 
+//.section-three-box-two
+     text-align: center
+     float: unset
+//.section-three>div:last-child
+        padding-bottom: 10%
+//.footer-download
+        padding-top: 10%
+        padding-bottom: 10%
+//.footer-above
+        padding-top: 5%
+        padding-bottom: 5%
+//.footer-rights
+        padding-top: 3%
+        padding-bottom: 3%
+//.section-three-box-one
+        margin-top: 15%
+        margin-bottom: 15%
+//.section-three-from
+        max-width: 100%
+        float: unset
 
 //Display Size
 @media (min-width: 64em) 
@@ -797,15 +841,24 @@ svg.intro
   
 @media screen and (max-width: 768px)
     form 
+        margin: auto
         max-width: 70%
+    form>input,form>textarea    
+        width: 100%
+    
     div#about 
         width: 100%
-    #about h2, #skills h2, #portfolio h2, .container > h2,.section-three>h2
-        padding-top: 15%
-        padding-bottom: 3%
-        font-size: 2.2em
+    .section-one h2, .section-two h2, .container > h2,.section-three>h2
+        padding-top: 15%!important
+        padding-bottom: 15%!important
+        font-size: 2.2em!important 
+    .skills
+        display: flex
+        flex-wrap: wrap-reverse
     .skill-right p
-        font-size: 1.2em
+        font-size: 1.1em
+    .skill-left
+        margin: auto
   
 @media screen and (min-width: 768px) 
     .hideme
@@ -814,11 +867,16 @@ svg.intro
         font-size: 2.0em
     .skill-right p 
         font-size: 1.2em
+    .footer-download
+        padding-top: 5%
+        padding-bottom: 5%
   
 @media screen and (min-width: 1000px)
     .hideme
-        opacity: 1
-    #about h2, .section-two h2, #portfolio h2, .container > h2,.section-three>h2
+        opacity: 0
+    .section-one,.section-two,.section-three    
+        max-width: 1000px!important
+    #about h2, .section-two h2,  .container > h2,.section-three>h2
         padding-top: 5%
         padding-bottom: 2%
     .skill-right p 
@@ -827,12 +885,14 @@ svg.intro
         padding-bottom: 0
     #about img 
         margin-top: 5%!important
-        width: 20%
+        width: 30%
         margin: auto
-        margin-bottom: 5%
+        margin-bottom: 10%
+    .skills
+        padding: 0
     .skill-left, .skill-right 
         display: inline-block
-        width: 35%
+        width: 45%
         padding-right: 5%
         text-align: left
         font-size: .8em
@@ -850,6 +910,8 @@ svg.intro
         
 @media screen and (min-width: 1500px) 
     .hideme
-        opacity: 1
+        opacity: 0
+    .section-one,.section-two,.section-three    
+        max-width: 1500px!important    
     #footer, .footer-rights
         padding-bottom: 2%

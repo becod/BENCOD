@@ -8,7 +8,7 @@ $(document).ready( function(){
 			var bottom_of_object=$(this).offset().top+$(this).outerHeight();
 			var bottom_of_window=$(window).scrollTop()+$(window).height();
 			if(bottom_of_window>bottom_of_object){
-				$(this).animate({'opacity':'1'},800);
+				$(this).animate({opacity:1},800);
 			}
 		});
 	});
@@ -37,7 +37,7 @@ $(function(){
         var Num3mod = Num3 + 1;
         return $('.container-vid-shade').css('opacity', Num),
         $(".container-vid").css({"transform":"scale(" + Num2mod + ")"});
-        //$(".text").css({"margin-top":"-" + Num3mod + "px"});
+        $(".intro").css({"top":"-" + Num3mod + "px"});
     });
 }.call(this));
 
