@@ -16,6 +16,8 @@ section
     padding: 6em 0
 .clear
     clear: both
+.scroll
+    overflow: hidden
 .hiden
     display: none
     overflow: hidden
@@ -23,13 +25,20 @@ section
     opacity: 0
     
 $fullH: 100vh    
-
-$sizeBrand:1.8em
+//Menu & Video's Letters
+$sizeBrand:2em
 $weightBrand: 100
 $sizeNav: 1.1em
 $weightNav: 100
 $sizeLetter: 1em
 
+//Skills
+$skillOne: 95%
+$skillTwo: 90%
+$skillThree: 90%
+$skillFour: 85%
+$skillFive: 70%
+$skillSix: 70%
 //Loading...
 @import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans)
 @mixin position-center($text-align: center) 
@@ -170,7 +179,7 @@ header
 .section-main
     background-color: #fff
     padding-top: 5%
-    padding-bottom: 5%
+    padding-bottom: 10%
 .section-one,.section-two,.section-three
     max-width: 1200px
     margin: auto
@@ -256,6 +265,9 @@ svg.intro
         float: left
         padding-left: 10px
     div:nth-child(2)
+        color: #f1f1f1
+        font-size: 1.1em
+        mix-blend-mode: difference
         float: right
         padding-right: 10px
     div:first-child, div:nth-child(2)
@@ -264,24 +276,35 @@ svg.intro
         transform: translateY(-50%)
 .one 
     height: 1.4em
-    width: 75%
+    width: $skillOne
     background: #2D2D2D
     display: block
 .two 
     height: 1.4em
-    width: 90%
+    width: $skillTwo
     background: #2D2D2D
     display: block
 .three 
     height: 1.4em
-    width: 70%
+    width: $skillThree
     background: #2D2D2D
     display: block
 .four 
     height: 1.4em
-    width: 70%
+    width: $skillFour
     background: #2D2D2D
     display: block
+.five 
+    height: 1.4em
+    width: $skillFive
+    background: #2D2D2D
+    display: block
+.six 
+    height: 1.4em
+    width: $skillSix
+    background: #2D2D2D
+    display: block
+    
 .skill-right
     padding-bottom: 30px
     &>div
@@ -294,14 +317,14 @@ svg.intro
             &:last-child
                 margin-right: 0px
 .skill-column
-    margin-top: 10%
+    margin-top: 15%
     text-align: center
     display: flex
 .skill-columns
     width: 33.33%
     padding: 0 5%
     &>div
-        font-size: 3em
+        font-size: 4em
         padding-bottom: 10%
     &>p
         font-size: 1em
@@ -880,7 +903,7 @@ svg.intro
         padding-top: 5%
         padding-bottom: 2%
     .skill-right p 
-        font-size: 1.2em
+        font-size: 1.24em
         line-height: 1.5em
         padding-bottom: 0
     #about img 

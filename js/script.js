@@ -1,7 +1,11 @@
 $(document).ready( function(){
-    $('#header').removeClass('hiden').delay(2000)
-    $('#section').removeClass('hiden').delay(2000).queue(function() {
-        $('.loading').remove()
+    $('#section').removeClass('hiden').delay(4000).queue(function() {
+        $('#body').removeClass('scroll');
+        $('.loading').remove();
+        
+        $(function() {
+            $('.intro').addClass('go');
+        });
     });
     $(window).scroll(function(){
 		$('.hideme').each(function(i){
@@ -13,11 +17,11 @@ $(document).ready( function(){
 		});
 	});
 });
-$(function() {
-  $('.intro').addClass('go');
-});
+
+
 $(function(){
-	$('a[href=#]:not(a[href=#])').on('click',function(){
+	$('a[href*="#"]:not([href="#"])').on('click',function(e){
+        e.preventDefault();
 		if(location.pathname.replace(/^\//,'')==this.pathname.replace(/^\//,'')&&location.hostname==this.hostname){
 			var target=$(this.hash);target=target.length?target:$('[name='+this.hash.slice(1)+']');
 			if(target.length){
@@ -33,25 +37,27 @@ $(function(){
         var Num = $(window).scrollTop() / 500;
         var Num2 = $(window).scrollTop() * .0004; // higher number for larger scaling BG
         var Num2mod = Num2 + 1;
-        var Num3 = $(window).scrollTop() * .2; // speed of title scroll
-        var Num3mod = Num3 + 1;
+        //var Num3 = $(window).scrollTop() * .2; // speed of title scroll
+        //var Num3mod = Num3 + 1;
         return $('.container-vid-shade').css('opacity', Num),
         $(".container-vid").css({"transform":"scale(" + Num2mod + ")"});
-        $(".intro").css({"top":"-" + Num3mod + "px"});
+        //$(".intro").css({"top":"-" + Num3mod + "px"});
     });
 }.call(this));
 
-var nav = document.getElementById('container-nav');
-var navlinks = nav.getElementsByTagName('a');
-
+var nav = $('#container-nav');
+var navlinks = $('#container-nav a')
 function toggleNav() {
-    (nav.classList.contains('active')) ? nav.classList.remove('active') : nav.classList.add('active');
+    (nav.hasClass('active')) ? nav.removeClass('active') : nav.addClass('active');
   }
-
-document.getElementById('nav-icon').addEventListener('click', function(e) {
+$('#nav-icon').on('click',function(e){
     e.preventDefault();
     toggleNav();
 });
+//document.getElementById('nav-icon').addEventListener('click', function(e) {
+//    e.preventDefault();
+//    toggleNav();
+//});
 
 for(var i = 0; i < navlinks.length; i++) {
     navlinks[i].addEventListener('click', function() {
