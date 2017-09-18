@@ -54,10 +54,7 @@ $('#nav-icon').on('click',function(e){
     e.preventDefault();
     toggleNav();
 });
-//document.getElementById('nav-icon').addEventListener('click', function(e) {
-//    e.preventDefault();
-//    toggleNav();
-//});
+
 
 for(var i = 0; i < navlinks.length; i++) {
     navlinks[i].addEventListener('click', function() {
