@@ -183,3 +183,28 @@ up.on('click', function() {
   hideNav();
 
 });
+
+//Contact Ajax
+function goContact() {
+    var form = $('#form-contact').serialize();
+    $.ajax({ 
+        type: 'POST', 
+        url: 'src/ajax_php/controller/contactController.php',
+        data: form
+    })
+        .done(function(data){
+        if( data == ''){
+            alert('Vacio data'+ data);
+        } else if ( data != ''){
+            alert('Task Completed'+data)
+        }
+    })
+        .fail(function(data){
+        alert('Error' + data);
+    });
+}
+function runScriptContact(e){
+    if (e.keyCode == 13){
+        goContact();
+    }
+} 

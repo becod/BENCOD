@@ -268,12 +268,12 @@
             <h2 class="hideme">CONTACT</h2>
             <div class="section-three-box-one hideme">
                 <div class="section-three-form ">
-                    <form action="" method="post">
-                        <input type="text" name="InputName" id="inputName" placeholder="Name" autocomplete="on" required><br>
-                        <input type="email" name="InputName" id="inputEmail" placeholder="Email" autocomplete="on" required><br>
-                        <textarea name="Inputmessage" id="inputMessage" rows="10" placeholder="Message" autocomplete="off"></textarea><br>
+                    <form id="form-contact" method="post" onkeypress="runScriptContact(event)">
+                        <input type="text" name="name" id="inputName" placeholder="Name" autocomplete="on" required><br>
+                        <input type="email" name="email" id="inputEmail" placeholder="Email" autocomplete="on" required><br>
+                        <textarea name="message" id="inputMessage" rows="10" placeholder="Message" autocomplete="off"></textarea><br>
                         <div class="section-download">
-                            <button type="submit" name="submit" id="contact">SEND</button>
+                            <button type="button" name="submit" id="contact" onclick="goContact()">SEND</button>
                         </div>
                     </form>
                 </div>
