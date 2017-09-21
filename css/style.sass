@@ -163,12 +163,14 @@ header
     top: 0
     left: 0
 .container-vid
-    top: -50px
+    
     height: $fullH
     position: fixed
     width: 100%
     &>video
         width: 100%
+        object-fit: cover
+        height: $fullH
 .container-vid-shade
     opacity: 0
     background: rgba(0,0,0,.8)
@@ -863,12 +865,36 @@ svg.intro
         background-position-y: -8vw
   
 @media screen and (max-width: 768px)
+    html
+        width: 100%
+    body
+        overflow-x: hidden
     form 
         margin: auto
-        max-width: 70%
+        max-width: inherit
+    .section-three-form
+        margin: auto    
     form>input,form>textarea    
         width: 100%
-    
+    .section-container-vid
+        height: inherit
+        top: inherit
+        padding-top: 65px
+        background: #fff
+    .container-vid
+        top: inherit
+        height: inherit
+        position: inherit
+        width: 100%
+        transform: none!important
+    svg.intro
+        position: absolute
+        top: 60%
+    .container-vid-shade
+        height: inherit
+        position: inherit
+        top: inherit
+        
     div#about 
         width: 100%
     .section-one h2, .section-two h2, .container > h2,.section-three>h2
@@ -878,6 +904,8 @@ svg.intro
     .skills
         display: flex
         flex-wrap: wrap-reverse
+    .skill-right
+        padding-bottom: 20%
     .skill-right p
         font-size: 1.1em
     .skill-left
@@ -887,18 +915,45 @@ svg.intro
         flex-wrap: wrap
     .skill-columns
         width: 100%
+        margin-bottom: 20%
     .slider-content
         display: none
-        
+    .clients-content>img
+        margin-right: inherit
+    .section-three-form
+        float: inherit
+    .section-three-box-two
+        margin-top: 25%
+        float: inherit
+    .footer-download
+        padding-top: 20%
+        padding-bottom: 20%
+    .footer-social
+        padding-top: 5%
+        padding-bottom: 5%
+    .social-container>a
+        font-size: 2.3em !important
+    .footer-above
+        padding-top: 15%
+        padding-bottom: 15%
+    .footer-rights
+        padding-top: 5%
+        padding-bottom: 5%
   
 @media screen and (min-width: 768px) 
     .hideme
         opacity: 1
     #about h2, #skills h2, #portfolio h2, .container > h2,.section-three>h2
         font-size: 2.0em
+    .clients-content>img
+        margin-right: 25px    
     .skill-right p 
         font-size: 1.2em
+    
     .footer-download
+        padding-top: 10%
+        padding-bottom: 10%
+    .footer-above
         padding-top: 5%
         padding-bottom: 5%
   
@@ -907,6 +962,7 @@ svg.intro
         opacity: 0
     .section-one,.section-two,.section-three    
         max-width: 1000px!important
+        margin-bottom: 10%
     #about h2, .section-two h2,  .container > h2,.section-three>h2
         padding-top: 5%
         padding-bottom: 2%
@@ -921,6 +977,7 @@ svg.intro
         margin-bottom: 10%
     .skills
         padding: 0
+        justify-content: space-around
     .skill-left, .skill-right 
         display: inline-block
         width: 45%
