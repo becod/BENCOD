@@ -4,7 +4,7 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])){
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
-    if(isset($name)&&isset($email)&&isset($message)){
+    if($name != ''&&$email!= ''&&$message!= ''){
         $name = addslashes($name);
         $email = addslashes($email);
         $message = addslashes($message);
@@ -49,12 +49,20 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])){
 
             mail($destinatario,$asunto,$cuerpo,$headers); 
             
-            echo ' '.$name.' '.$email.' '.$message.' '.$messageDate;
+            //echo ' '.$name.' '.$email.' '.$message.' '.$messageDate;
+            if (count($_POST) > 0) {
+                foreach ($_POST as $k=>$v) {
+                    unset($_POST[$k]);
+                }
+            }
+            echo 1;
+        } else {
+            echo 0;
         }
     } else {
-        echo 'Hola inside';
+        echo 0;
     }
 } else {
-    echo 'Hola';
+    echo 0;
 }
 ?>

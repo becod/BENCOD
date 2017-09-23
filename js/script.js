@@ -193,15 +193,42 @@ function goContact() {
         data: form
     })
         .done(function(data){
-        if( data == ''){
-            alert('Vacio data'+ data);
-        } else if ( data != ''){
-            alert('Task Completed'+data)
+        if( data == 0){
+            console.log('Task Error '+data);
+            animateContact(data);
+        } else if ( data == 1){
+            console.log('Task Completed '+data);
+            animateContact(data);
         }
     })
         .fail(function(data){
-        alert('Error' + data);
+            console.log('Task Fail Conection '+data);
     });
+}
+var formDom = $('#form-contact'),
+    formInput = $('#form-contact input, #form-contact textarea, #form-contact div'),
+    formDiv = $('#form-contact div'),
+    done = "<div id='form-message'><label>E-mail enviado correctamente</lable><br><button onclick='testRetake()' type='button'>Volver a Intentar</button></div>",
+    error = "<div id='form-message'><label>E-mail enviado Erroneamente, volver a intentar</lable><br><button onclick='testRetake()' type='button'>Volver a Intentar</button></div>";
+    
+function animateContact(a) {
+    if (a == 0){
+        console.log('Esto es if '+a);
+        formInput.fadeOut();
+        formInput.val('');
+        formDom.append(error);
+        
+    }
+    else if (a == 1){
+        console.log('Esto es else if '+a);
+        formInput.fadeOut();
+        formInput.val('');
+        formDom.append(done);
+    }
+}
+function testRetake(){
+    $('#form-message').remove();
+    formInput.fadeIn();
 }
 function runScriptContact(e){
     if (e.keyCode == 13){
