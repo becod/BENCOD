@@ -230,8 +230,48 @@ function testRetake(){
     $('#form-message').remove();
     formInput.fadeIn();
 }
+function goCheck(){
+    let inputName = $('#inputName'),
+        inputEmail = $('#inputEmail'),
+        inputMessage = $('#inputMessage');
+    let checkingName = checkName(inputName.val());
+        //checkingEmail = checkEmail(inputEmail.val),
+        //cheackingMessage = checkingMessage(inputMessage.val);
+    
+    if (checkingName)
+        console.log('Esto es verdad');
+    else 
+        console.log('Esto es falso');
+    
+}
+function checkName(a){
+    let processName = a;
+    if (processName != '' && processName != undefined && processName != null && processName.length != 0){
+        if(processName.length>=3 && processName.length<=20 && checkNotNum(a) != true){
+            return true;
+        }
+    }
+    return false;
+}
+function checkNotNum(a){
+    let processNum = a,
+        e = 1;
+    for(i = 0; i < processNum.length; i++ ){
+        let numSbs = processNum.substring(i,e),
+            numNaN = isNaN(numSbs),
+            numChrt = /^[a-zA-Z ]*$/.test(numSbs);
+        if(numNaN != true || numChrt != true){
+            return true;
+            break;
+        } 
+        e++;
+    }
+    return false;
+}
+
 function runScriptContact(e){
     if (e.keyCode == 13){
-        goContact();
+        goCheck();
+        //goContact();
     }
 } 
