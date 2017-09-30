@@ -236,13 +236,23 @@ function goCheck(){
         inputMessage = $('#inputMessage');
     let checkingName = checkName(inputName.val()),
         checkingEmail = checkEmail(inputEmail.val()),
-        cheackingMessage = checkMessage(inputMessage.val());
+        checkingMessage = checkMessage(inputMessage.val());
     
-    if (cheackingMessage)
-        console.log('Esto es verdad');
-    else 
-        console.log('Esto es falso');
+    if (checkingName == true && checkingEmail == true && checkingMessage == true){
+        goContact();
+    } else if (checkingName != true) {
+        inputName.addClass('error');
+    } else if (checkingEmail != true) {
+        inputEmail.addClass('error');
+    } else if (checkingMessage != true) {
+        inputMessage.addClass('error');
+    } else {
+        console.log('Esto es Else');
+    }
     
+}
+function clearUp(e){
+    $(e).removeClass('error');
 }
 function checkName(a){
     let processName = a;
@@ -297,6 +307,5 @@ function emailChecker(a){
 function runScriptContact(e){
     if (e.keyCode == 13){
         goCheck();
-        //goContact();
     }
 } 

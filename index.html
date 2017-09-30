@@ -307,9 +307,9 @@
             <div class="section-three-box-one hideme">
                 <div class="section-three-form ">
                     <form id="form-contact" method="post" onkeypress="runScriptContact(event)">
-                        <input type="text" name="name" id="inputName" placeholder="Name" autocomplete="on" required><br>
-                        <input type="email" name="email" id="inputEmail" placeholder="Email" autocomplete="on" required><br>
-                        <textarea name="message" id="inputMessage" rows="10" placeholder="Message" autocomplete="off"></textarea><br>
+                        <input type="text" name="name" id="inputName" class=" " placeholder="Name" autocomplete="on" required onkeyup="clearUp(this)"><br>
+                        <input type="email" name="email" id="inputEmail" class=" " placeholder="Email" autocomplete="on" required onkeyup="clearUp(this)"><br>
+                        <textarea name="message" id="inputMessage" class=" " rows="10" placeholder="Message" autocomplete="off" onkeyup="clearUp(this)"></textarea><br>
                         <div class="section-download">
                             <button type="button" name="submit" id="contact" onclick="goCheck()">SEND</button>
                         </div>
