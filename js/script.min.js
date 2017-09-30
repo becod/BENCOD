@@ -242,10 +242,34 @@ function goCheck(){
         goContact();
     } else if (checkingName != true) {
         inputName.addClass('error');
+        if (checkingEmail != true){
+            inputEmail.addClass('error');
+            if (checkingMessage != true){
+                inputMessage.addClass('error');
+            }
+        } else if (checkingMessage != true){
+            inputMessage.addClass('error');
+        }
     } else if (checkingEmail != true) {
         inputEmail.addClass('error');
+        if (checkingName != true){
+            inputName.addClass('error');
+            if (checkingMessage != true){
+                inputMessage.addClass('error');
+            }
+        } else if (checkingMessage != true){
+            inputMessage.addClass('error');
+        }
     } else if (checkingMessage != true) {
         inputMessage.addClass('error');
+        if (checkingName != true){
+            inputName.addClass('error');
+            if (checkingEmail != true){
+                inputEmail.addClass('error');
+            }
+        } else if (checkingEmail != true){
+            inputEmail.addClass('error');
+        }
     } else {
         console.log('Esto es Else');
     }
