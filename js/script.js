@@ -235,10 +235,10 @@ function goCheck(){
         inputEmail = $('#inputEmail'),
         inputMessage = $('#inputMessage');
     let checkingName = checkName(inputName.val()),
-        checkingEmail = checkEmail(inputEmail.val());
-        //cheackingMessage = checkingMessage(inputMessage.val);
+        checkingEmail = checkEmail(inputEmail.val()),
+        cheackingMessage = checkMessage(inputMessage.val());
     
-    if (checkingEmail)
+    if (cheackingMessage)
         console.log('Esto es verdad');
     else 
         console.log('Esto es falso');
@@ -262,6 +262,15 @@ function checkEmail(a){
     }
     return false;
 }
+function checkMessage(a){
+    let processMessage = a;
+    if(processMessage != '' && processMessage != undefined && processMessage != null && processMessage.length !=0){
+        if(processMessage.length<=500){
+            return true;
+        }
+    }
+    return false;
+}
 function letterChecker(a){
     let processNum = a,
         e = 1;
@@ -280,7 +289,6 @@ function emailChecker(a){
     let processCrtr = a,
         testEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(processCrtr);
     if (testEmail != true){
-        console.log('If completed')
         return true;
     }
     return false;    
